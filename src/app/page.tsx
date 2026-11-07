@@ -21,41 +21,28 @@ export default function Home() {
         />
       </div>
 
-      {/* 2. Apple Scrim / Dark Gradient Overlay for Maximum Contrast */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/80 via-black/40 to-black/85 pointer-events-none" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/20 to-black/75 pointer-events-none" />
+      {/* 2. Apple Scrim / Dark Gradient Overlay with Enhanced Contrast */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-black/60 via-black/35 to-black/75 pointer-events-none" />
 
       {/* 3. TOP: Minimalist Floating Navbar (White / Off-White Glass) */}
       <header className="relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6">
         <nav
-          className="flex items-center justify-between px-5 sm:px-6 py-3 rounded-full bg-white/90 sm:bg-[#fbfbfd]/90 backdrop-blur-xl border border-white/80 shadow-[0_6px_28px_rgba(0,0,0,0.18)] transition-all duration-300"
+          className="flex items-center justify-between px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/90 sm:bg-[#fbfbfd]/90 backdrop-blur-xl border border-white/80 shadow-[0_6px_28px_rgba(0,0,0,0.18)] transition-all duration-300"
           aria-label="Navigasi Utama"
         >
-          {/* Logo Brand */}
+          {/* Logo Brand with Transparent Background */}
           <a
             href="/"
-            className="flex items-center gap-2.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0071e3] rounded-full px-1"
+            className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0071e3] rounded-full px-1"
           >
-            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#0071e3] to-[#2997ff] flex items-center justify-center shadow-[0_2px_10px_rgba(0,113,227,0.4)] group-hover:scale-105 transition-transform duration-200">
-              <svg
-                className="w-4 h-4 text-white"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
-                <circle cx="7" cy="17" r="2" />
-                <path d="M9 17h6" />
-                <circle cx="17" cy="17" r="2" />
-              </svg>
-            </div>
-            <span className="text-base sm:text-lg font-semibold tracking-tight text-zinc-900 group-hover:text-black transition-colors">
-              pesanmobil<span className="text-[#0071e3]">.com</span>
-            </span>
+            <Image
+              src="/logo.png"
+              alt="pesanmobil.com"
+              width={1188}
+              height={243}
+              className="h-8 sm:h-9 w-auto object-contain group-hover:opacity-90 transition-opacity duration-200"
+              priority
+            />
           </a>
 
           {/* Desktop Nav Links */}
@@ -197,19 +184,19 @@ export default function Home() {
       </header>
 
       {/* 4. CENTER: Main Hero Showcase Content */}
-      <main className="relative z-20 flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 max-w-4xl mx-auto py-8 sm:py-12">
+      <main className="relative z-20 flex-1 flex flex-col items-center justify-start text-center px-4 sm:px-6 max-w-4xl mx-auto pt-16 sm:pt-24 md:pt-28 pb-6">
         {/* Master Headline (SF Pro Display Semibold Style) */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.08] text-white">
-          Kemudahan Pesan Rental Mobil dalam Satu Genggaman.
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-[-0.035em] leading-[1.08] text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)] pt-0">
+          Pesan Rental Mobil? PesanMobil.com aja.
         </h1>
 
         {/* Subheadline (SF Pro Text Style) */}
-        <p className="mt-4 sm:mt-6 text-sm sm:text-lg md:text-xl text-white/75 max-w-2xl font-normal leading-relaxed tracking-tight">
+        <p className="mt-1 sm:mt-1.5 text-sm sm:text-lg md:text-xl text-white/90 max-w-2xl font-normal leading-relaxed tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
           Sewa mobil harian, mingguan, hingga bulanan dengan pilihan lepas kunci atau supir profesional. Armada bersih, terawat, dan siap menemani perjalanan Anda.
         </p>
 
         {/* Action Buttons (Capsule Geometry) */}
-        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto">
+        <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto">
           {/* Primary Action Button */}
           <a
             href="#pesan"
@@ -233,11 +220,11 @@ export default function Home() {
           {/* Secondary Action Button */}
           <a
             href="#armada"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/[0.08] hover:bg-white/[0.14] backdrop-blur-md border border-white/20 text-white font-medium text-sm sm:text-base transition-all duration-200 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white/[0.12] hover:bg-white/[0.20] backdrop-blur-md border border-white/30 text-white font-medium text-sm sm:text-base shadow-lg shadow-black/20 transition-all duration-200 active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
-            <span>Pilih Armada Mobil</span>
+            <span>Lihat Armada</span>
             <svg
-              className="w-4 h-4 text-white/70"
+              className="w-4 h-4 text-white/80"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -250,21 +237,6 @@ export default function Home() {
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
           </a>
-        </div>
-
-        {/* Quick Rental Categories / Tags */}
-        <div className="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-2 text-xs text-white/70">
-          <span className="text-white/40 mr-1">Pilihan Layanan:</span>
-          {["Lepas Kunci", "Dengan Supir", "Avanza", "Innova Zenix", "Fortuner", "Alphard", "Hiace"].map(
-            (tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 rounded-full bg-white/[0.06] border border-white/10 text-white/80 text-xs"
-              >
-                {tag}
-              </span>
-            )
-          )}
         </div>
       </main>
 
