@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "pesanmobil.com — Platform Rental & Sewa Mobil Terpercaya",
+  title: "pesanmobil.com: Sewa Mobil Lepas Kunci dan dengan Pengemudi",
   description:
     "Pesan rental mobil mudah, cepat, dan terpercaya. Pilihan sewa mobil harian, mingguan, bulanan lepas kunci atau dengan supir profesional. Armada bersih, prima, dan siap jalan.",
   keywords: [

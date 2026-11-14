@@ -1,12 +1,16 @@
 import { HeroSection } from "@/components/HeroSection";
 
+const whatsappNumber =
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "") ?? "";
+
 const HERO_CONTENT = {
-  title: "PesanMobil.com",
+  title: "Perjalanan nyaman dimulai dari unit yang pas buat kamu",
   subtitle:
-    "Sewa mobil lepas kunci minimal 2 hari atau dengan pengemudi. Unit disiapkan melalui mitra rental dan dikonfirmasi via WhatsApp.",
+    "Mau sewa lepas kunci atau ditemani pengemudi berpengalaman? Pilih unit yang kamu mau, lalu kirim chat ke WhatsApp agar tim kami bantu siapkan unitnya!.",
   ctaLabel: "Tanya ketersediaan via WhatsApp",
-  ctaHref:
-    "https://wa.me/?text=Halo%20pesanmobil.com%2C%20saya%20mau%20tanya%20ketersediaan%20unit%20sewa%20mobil.",
+  ctaHref: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    "Halo pesanmobil.com, saya mau tanya ketersediaan unit sewa mobil."
+  )}`,
   logoSrc: "/logo.png",
   logoAlt: "pesanmobil.com",
   desktopVideoSrc: "/assets/hazeglow-1-1920x1080-desktop.mp4",

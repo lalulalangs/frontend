@@ -117,12 +117,12 @@ export function HeroSection({
           />
         )}
 
-        <h1 className="font-sans text-[40px] sm:text-[56px] lg:text-[80px] font-semibold leading-[1.05] tracking-[-0.015em] text-[#1d1d1f]">
+        <h1 className="font-sans text-[32px] sm:text-[56px] lg:text-[70px] font-semibold leading-[1.05] tracking-[-0.015em] text-[#1d1d1f]">
           {title}
         </h1>
 
         {subtitle && (
-          <p className="max-w-2xl text-[17px] sm:text-[19px] font-normal leading-[1.47] text-[#424245]">
+          <p className="max-w-2xl text-[13px] sm:text-[19px] font-normal leading-[1.47] text-[#424245]">
             {subtitle}
           </p>
         )}
@@ -133,7 +133,7 @@ export function HeroSection({
               href={ctaHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-[#fb923c] hover:bg-[#f97316] active:bg-[#ea580c] text-[#fefefe] font-semibold text-[15px] sm:text-[17px] px-7 py-3.5 transition-colors duration-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#0095d9]"
+              className="inline-flex items-center justify-center rounded-md bg-[#fb923c] hover:bg-[#f97316] active:bg-[#ea580c] text-[#fefefe] font-semibold text-[12px] sm:text-[17px] px-7 py-3.5 transition-colors duration-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#0095d9]"
             >
               {ctaLabel}
             </a>
