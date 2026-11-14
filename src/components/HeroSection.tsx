@@ -87,9 +87,11 @@ export function HeroSection({
       )}
 
       <div className="relative z-10 w-full max-w-[1024px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="font-sans text-[40px] sm:text-[56px] lg:text-[80px] font-semibold leading-[1.05] tracking-[-0.015em] text-[#1d1d1f]">
+        <h1 className="font-sans text-[40px] sm:text-[56px] lg:text-[80px] font-bold leading-[1.05] tracking-[-0.015em] text-[#F97316]">
           {title}
         </h1>
+        //container biar text H1 heronya agak atas dikit.
+        <div className= "container mx-auto py-50"></div>
         {children}
       </div>
     </section>

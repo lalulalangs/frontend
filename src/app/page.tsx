@@ -1,7 +1,7 @@
 import { HeroSection } from "@/components/HeroSection";
 
 const HERO_CONTENT = {
-  title: "Lorem ipsum dolor sit amet",
+  title: "PesanMobil.com",
   desktopVideoSrc: "/assets/hazeglow-1-1920x1080-desktop.mp4",
   mobileVideoSrc: "/assets/hazeglow-1-1080x1350-mobile.mp4",
 };
