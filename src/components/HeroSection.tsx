@@ -1,9 +1,16 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import Magnet from "@/components/Magnet";
 
 export interface HeroSectionProps {
   title: string;
+  subtitle?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  logoSrc?: string;
+  logoAlt?: string;
   desktopVideoSrc: string;
   mobileVideoSrc: string;
   mobileBreakpointPx?: number;
@@ -13,10 +20,16 @@ export interface HeroSectionProps {
 
 /**
  * Full-bleed hero section with responsive background video switching
- * between desktop and mobile viewports.
+ * between desktop and mobile viewports, paired with a soft radial scrim
+ * for WCAG AA text contrast and a React Bits Magnet CTA.
  */
 export function HeroSection({
   title,
+  subtitle,
+  ctaLabel,
+  ctaHref,
+  logoSrc,
+  logoAlt = "pesanmobil.com",
   desktopVideoSrc,
   mobileVideoSrc,
   mobileBreakpointPx = 768,
@@ -82,16 +95,51 @@ export function HeroSection({
           playsInline
           preload="metadata"
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center opacity-40"
         />
       )}
 
-      <div className="relative z-10 w-full max-w-[1024px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="font-sans text-[40px] sm:text-[56px] lg:text-[80px] font-bold leading-[1.05] tracking-[-0.015em] text-[#F97316]">
+      {/* Radial surface scrim to soften dither frequency behind text */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.92)_0%,rgba(255,255,255,0.72)_55%,rgba(255,255,255,0.25)_100%)]"
+      />
+
+      <div className="relative z-10 w-full max-w-[1024px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center gap-6">
+        {logoSrc && (
+          <Image
+            src={logoSrc}
+            alt={logoAlt}
+            width={220}
+            height={45}
+            priority
+            className="h-9 sm:h-11 w-auto object-contain"
+          />
+        )}
+
+        <h1 className="font-sans text-[40px] sm:text-[56px] lg:text-[80px] font-semibold leading-[1.05] tracking-[-0.015em] text-[#1d1d1f]">
           {title}
         </h1>
-        //container biar text H1 heronya agak atas dikit.
-        <div className= "container mx-auto py-50"></div>
+
+        {subtitle && (
+          <p className="max-w-2xl text-[17px] sm:text-[19px] font-normal leading-[1.47] text-[#424245]">
+            {subtitle}
+          </p>
+        )}
+
+        {ctaLabel && ctaHref && (
+          <Magnet padding={48} magnetStrength={4} maxOffset={10}>
+            <a
+              href={ctaHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-[#fb923c] hover:bg-[#f97316] active:bg-[#ea580c] text-[#fefefe] font-semibold text-[15px] sm:text-[17px] px-7 py-3.5 transition-colors duration-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#0095d9]"
+            >
+              {ctaLabel}
+            </a>
+          </Magnet>
+        )}
+
         {children}
       </div>
     </section>

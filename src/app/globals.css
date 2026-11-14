@@ -6,37 +6,41 @@
 
 :root {
   --bg: #ffffff;
-  --surface: #f5f5f7;
-  --surface-warm: #fbfbfd;
+  --surface: #f8fafc;
+  --surface-neutral: #fafafa;
   --fg: #1d1d1f;
   --fg-2: #424245;
   --muted-text: #6e6e73;
   --meta: #86868b;
   --border: #d2d2d7;
-  --border-soft: #e8e8ed;
-  --accent-blue: #0071e3;
-  --accent-hover: #0077ed;
-  --accent-active: #0066cc;
+  --border-control: #86868b;
+  --brand: #0095d9;
+  --brand-link: #0077ae;
+  --brand-light: #38bdf8;
+  --cta: #f97316;
+  --cta-hover: #fb923c;
+  --cta-active: #ea580c;
+  --cta-on: #1d1d1f;
   --font-helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif;
 
-  /* shadcn/ui tokens mapped to Apple-inspired design system */
+  /* shadcn/ui tokens mapped to pesanmobil.com design system */
   --background: #ffffff;
   --foreground: #1d1d1f;
   --card: #ffffff;
   --card-foreground: #1d1d1f;
   --popover: #ffffff;
   --popover-foreground: #1d1d1f;
-  --primary: #0071e3;
-  --primary-foreground: #ffffff;
-  --secondary: #f5f5f7;
+  --primary: #f97316;
+  --primary-foreground: #1d1d1f;
+  --secondary: #f8fafc;
   --secondary-foreground: #1d1d1f;
-  --muted: #f5f5f7;
+  --muted: #fafafa;
   --muted-foreground: #6e6e73;
-  --accent: #0071e3;
-  --accent-foreground: #ffffff;
-  --destructive: #dc2626;
-  --input: #d2d2d7;
-  --ring: #0071e3;
+  --accent: #0095d9;
+  --accent-foreground: #1d1d1f;
+  --destructive: #c2410c;
+  --input: #86868b;
+  --ring: #0095d9;
   --radius: 0.75rem;
 }
 
@@ -44,7 +48,7 @@
   --color-background: var(--bg);
   --color-foreground: var(--fg);
   --color-surface: var(--surface);
-  --color-accent: var(--accent-blue);
+  --color-accent: var(--brand);
   --font-sans: var(--font-helvetica);
   --font-display: var(--font-helvetica);
   --font-heading: var(--font-helvetica);
@@ -65,9 +69,9 @@
   --color-card: var(--card);
   --radius-sm: 8px;
   --radius-md: 12px;
-  --radius-lg: 18px;
+  --radius-lg: 16px;
   --radius-xl: 24px;
-  --radius-pill: 980px;
+  --radius-pill: 9999px;
 }
 
 @layer base {
