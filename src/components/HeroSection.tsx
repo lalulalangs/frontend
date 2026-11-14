@@ -2,13 +2,22 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useLanguage, type Locale } from "@/components/LanguageProvider";
 import Magnet from "@/components/Magnet";
+
+export interface HeroCopy {
+  title?: string;
+  subtitle?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
 
 export interface HeroSectionProps {
   title: string;
   subtitle?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  localizedCopy?: Partial<Record<Locale, HeroCopy>>;
   logoSrc?: string;
   logoAlt?: string;
   desktopVideoSrc: string;
@@ -20,14 +29,15 @@ export interface HeroSectionProps {
 
 /**
  * Full-bleed hero section with responsive background video switching
- * between desktop and mobile viewports, paired with a soft radial scrim
- * for WCAG AA text contrast and a React Bits Magnet CTA.
+ * between desktop and mobile viewports, paired with a neutral surface scrim
+ * for WCAG AA contrast and a React Bits Magnet CTA.
  */
 export function HeroSection({
   title,
   subtitle,
   ctaLabel,
   ctaHref,
+  localizedCopy,
   logoSrc,
   logoAlt = "pesanmobil.com",
   desktopVideoSrc,
@@ -36,6 +46,13 @@ export function HeroSection({
   className = "",
   children,
 }: HeroSectionProps) {
+  const { locale } = useLanguage();
+  const activeCopy = localizedCopy?.[locale];
+  const resolvedTitle = activeCopy?.title ?? title;
+  const resolvedSubtitle = activeCopy?.subtitle ?? subtitle;
+  const resolvedCtaLabel = activeCopy?.ctaLabel ?? ctaLabel;
+  const resolvedCtaHref = activeCopy?.ctaHref ?? ctaHref;
+
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
   const [reducedMotion, setReducedMotion] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -118,24 +135,24 @@ export function HeroSection({
         )}
 
         <h1 className="font-sans text-[32px] sm:text-[56px] lg:text-[70px] font-semibold leading-[1.05] tracking-[-0.015em] text-[#1d1d1f]">
-          {title}
+          {resolvedTitle}
         </h1>
 
-        {subtitle && (
-          <p className="max-w-2xl text-[13px] sm:text-[19px] font-normal leading-[1.47] text-[#424245]">
-            {subtitle}
+        {resolvedSubtitle && (
+          <p className="max-w-4xl text-[13px] sm:text-[19px] font-normal leading-[1.47] text-[#424245]">
+            {resolvedSubtitle}
           </p>
         )}
 
-        {ctaLabel && ctaHref && (
+        {resolvedCtaLabel && resolvedCtaHref && (
           <Magnet padding={48} magnetStrength={4} maxOffset={10}>
             <a
-              href={ctaHref}
+              href={resolvedCtaHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-md bg-[#fb923c] hover:bg-[#f97316] active:bg-[#ea580c] text-[#fefefe] font-semibold text-[12px] sm:text-[17px] px-7 py-3.5 transition-colors duration-500 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#0095d9]"
             >
-              {ctaLabel}
+              {resolvedCtaLabel}
             </a>
           </Magnet>
         )}

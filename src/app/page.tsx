@@ -6,13 +6,31 @@ const whatsappNumber =
 const HERO_CONTENT = {
   title: "Perjalanan nyaman dimulai dari unit yang pas buat kamu",
   subtitle:
-    "Mau sewa lepas kunci atau ditemani pengemudi berpengalaman? Pilih unit yang kamu mau, lalu kirim chat ke WhatsApp agar tim kami bantu siapkan unitnya!.",
-  ctaLabel: "Tanya ketersediaan via WhatsApp",
+    "Pilih unit yang kamu mau, lalu kirim chat ke WhatsApp agar tim kami bantu siapkan unitnya",
+  ctaLabel: "Tanya ketersediaan",
   ctaHref: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     "Halo pesanmobil.com, saya mau tanya ketersediaan unit sewa mobil."
   )}`,
-  logoSrc: "/logo.png",
-  logoAlt: "pesanmobil.com",
+  localizedCopy: {
+    id: {
+      title: "Perjalanan nyaman dimulai dari unit yang pas buat kamu",
+      subtitle:
+        "Pilih unit yang kamu mau, lalu kirim chat ke WhatsApp agar tim kami bantu siapkan unitnya",
+      ctaLabel: "Tanya ketersediaan",
+      ctaHref: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+        "Halo pesanmobil.com, saya mau tanya ketersediaan unit sewa mobil."
+      )}`,
+    },
+    en: {
+      title: "A comfortable journey starts with the right vehicle for you",
+      subtitle:
+        "Pick the unit you want and chat with us on WhatsApp so our team can prepare it for you",
+      ctaLabel: "Check availability",
+      ctaHref: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+        "Hello pesanmobil.com, I would like to check car rental availability."
+      )}`,
+    },
+  },
   desktopVideoSrc: "/assets/hazeglow-1-1920x1080-desktop.mp4",
   mobileVideoSrc: "/assets/hazeglow-1-1080x1350-mobile.mp4",
 };
@@ -25,8 +43,7 @@ export default function Home() {
         subtitle={HERO_CONTENT.subtitle}
         ctaLabel={HERO_CONTENT.ctaLabel}
         ctaHref={HERO_CONTENT.ctaHref}
-        logoSrc={HERO_CONTENT.logoSrc}
-        logoAlt={HERO_CONTENT.logoAlt}
+        localizedCopy={HERO_CONTENT.localizedCopy}
         desktopVideoSrc={HERO_CONTENT.desktopVideoSrc}
         mobileVideoSrc={HERO_CONTENT.mobileVideoSrc}
       />
